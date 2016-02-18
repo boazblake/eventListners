@@ -1,4 +1,6 @@
 
+
+
 						// NAVIGATION BUTTON//
 var navBox = document.querySelector(".answer-box")
 
@@ -10,23 +12,27 @@ navBox.appendChild(navButton);
 
 
 						// NAVIGATION OPACITY//
-
+var navMenu = document.querySelector('.nav-menu')
 
 var navState = {
-	buttonShow: true
-	navValue: true
+	navShow: true
 }
 
-var toggleNavValue = function() {
-  if (navState.buttonShow) {
-    navButton.value = "hi"
-    navState.showing = false
+var navBarHide = function() {
+  if (navState.navShow) {
+    navMenu.style.opacity = 0
+    navState.navShow = false
   }
   else {
-    bmo.style.opacity = 1
-    navState.showing = true
+    navMenu.style.opacity = 1
+    navState.navShow = true
   }
 }
+
+navButton.addEventListener("click", navBarHide)
+
+
+
 
 
 
