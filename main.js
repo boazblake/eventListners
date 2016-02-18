@@ -35,6 +35,65 @@ navButton.addEventListener("click", navBarHide)
 
 
 
+							// TASK 2/////
+var inputBox = document.querySelector("#add-guest .answer-box")
+
+
+var inputEl = document.querySelector('input.listMaker')
+
+
+var itemsListUl = document.querySelector(".guest-list")
+
+var addItem = function(keyEvent) {
+  var targetEl = keyEvent.target
+  console.log([targetEl])
+
+
+
+
+  if (keyEvent.keyCode === 13) {
+      var userInput = inputEl.value
+
+
+
+      var newLi = document.createElement('li')
+      newLi.className += ' guest'
+      // console.log([newLi])
+      newLi.textContent = userInput
+
+
+      itemsListUl.appendChild(newLi)
+      inputEl.value = ''
+  }
+}
+
+
+
+// console.log( [inputEl] )
+
+
+
+inputEl.addEventListener('keydown',addItem)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
