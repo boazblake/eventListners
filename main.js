@@ -1,29 +1,32 @@
-// GO!
 
-
- var navBox = document.querySelector(".answer-box")
- // console.log(navBox)
-
- // Append the following on to navPArentBox
-// <input id="navButt" value="Show/Hide Nav" type="button" />
+						// NAVIGATION BUTTON//
+var navBox = document.querySelector(".answer-box")
 
 var navButton = document.createElement('button');
 navButton.innerHTML =
  '<input id="navButt" value="Show/Hide Nav" type="button" />';
 
 navBox.appendChild(navButton);
-// console.log(navButton)
 
 
+						// NAVIGATION OPACITY//
 
 
+var navState = {
+	buttonShow: true
+	navValue: true
+}
 
-
-
-
-
-
-
+var toggleNavValue = function() {
+  if (navState.buttonShow) {
+    navButton.value = "hi"
+    navState.showing = false
+  }
+  else {
+    bmo.style.opacity = 1
+    navState.showing = true
+  }
+}
 
 
 
