@@ -36,7 +36,6 @@ navButton.addEventListener("click", navBarHide)
 
 
 							// TASK 2/////
-var inputBox = document.querySelector("#add-guest .answer-box")
 
 
 var inputEl = document.querySelector('input.listMaker')
@@ -44,9 +43,10 @@ var inputEl = document.querySelector('input.listMaker')
 
 var itemsListUl = document.querySelector(".guest-list")
 
+
 var addItem = function(keyEvent) {
   var targetEl = keyEvent.target
-  console.log([targetEl])
+  // console.log([targetEl])
 
 
 
@@ -57,83 +57,56 @@ var addItem = function(keyEvent) {
 
 
       var newLi = document.createElement('li')
-      newLi.className += ' guest'
-      // console.log([newLi])
+      newLi.className += '#add-guest guest'
       newLi.textContent = userInput
 
 
       itemsListUl.appendChild(newLi)
       inputEl.value = ''
   }
+
+
+
 }
 
-
+inputEl.addEventListener('keydown',addItem)
 
 // console.log( [inputEl] )
 
 
 
-inputEl.addEventListener('keydown',addItem)
+
+
+
+                  ///////// TASK 3/////
 
 
 
 
 
+var inputEl3 = document.querySelector('.listMaker3')
+console.log([inputEl3])
+var itemsListUl3 = document.querySelector('ul.guest-list-bonus')
+
+function addItem3(keyEvent3){
+  console.log(keyEvent3.keyCode)
+  
+    var targetEl3 = keyEvent3.target
+  // console.log(targetEl3)
+
+  if (keyEvent3.keyCode === 13) {
+    var userInput3 = inputEl3.value
+
+    var newLi3 = document.createElement('li3')
+    newLi3.className += ''
+    console.log(newLi3)
+
+    itemsListUl3.appendChild(newLi3)
+    inputEl3.value = ''
+  }
+  
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // BONUS 
-// var input = document.querySelector("#add-guest-bonus input")
-// var guestList = document.querySelector("#add-guest-bonus ul")
-
-// var addGuest = function(e) {
-// 	console.log(e.keyCode)
-// 	if (e.keyCode === 13) {
-// 		var newGuestItem = document.createElement('li')
-// 		newGuestItem.innerHTML = e.target.value + "<button>X</button>"
-// 		newGuestItem.classList.add('guest')
-// 		newGuestItem.querySelector('button').addEventListener('click',function() {
-// 			guestList.removeChild(newGuestItem)
-// 		})
-// 		guestList.appendChild(newGuestItem)
-// 		e.target.value = ''
-// 	}
-// }
-// input.addEventListener('keypress',addGuest)
+inputEl3.addEventListener('keydown',addItem3)
