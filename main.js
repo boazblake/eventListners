@@ -46,7 +46,7 @@ var itemsListUl = document.querySelector(".guest-list")
 
 var addItem = function(keyEvent) {
   var targetEl = keyEvent.target
-  // console.log([targetEl])
+  console.log([targetEl.value])
 
 
 
@@ -84,22 +84,23 @@ inputEl.addEventListener('keydown',addItem)
 
 
 
-var inputEl3 = document.querySelector('.listMaker3')
+var inputEl3 = document.querySelector('input.listMaker3')
 console.log([inputEl3])
 var itemsListUl3 = document.querySelector('ul.guest-list-bonus')
 
 function addItem3(keyEvent3){
-  console.log(keyEvent3.keyCode)
+  // console.log(keyEvent3.keyCode)
   
     var targetEl3 = keyEvent3.target
-  // console.log(targetEl3)
 
   if (keyEvent3.keyCode === 13) {
     var userInput3 = inputEl3.value
+    console.log([inputEl3.value])
 
     var newLi3 = document.createElement('li3')
-    newLi3.className += ''
-    console.log(newLi3)
+    newLi3.className += '#add-guest-bonus'
+    newLi3.textContent = userInput3
+    console.log([newLi3])
 
     itemsListUl3.appendChild(newLi3)
     inputEl3.value = ''
