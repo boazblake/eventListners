@@ -89,7 +89,7 @@ var targetEl3 = keyEvent3.target
 
     var newLi3 = document.createElement('li')
     newLi3.className += ' guest'
-    newLi3.innerHTML = userInput3 + '<button>X</button>'
+    newLi3.innerHTML = userInput3 + '<button onclick="toggleList()">X</button>'
     // console.log([newLi3])
 
     itemsListUl3.appendChild(newLi3)
@@ -101,5 +101,40 @@ var targetEl3 = keyEvent3.target
 
   }
 }
+
+
+
+
+var toggleList = function() {
+  var deleteList = document.querySelector("li button")
+  var delListItem = document.querySelector("li")
+  
+  var listState = {
+  showing: true
+  }
+
+  console.log(listState)
+
+  if (listState.showing) {
+    delListItem.style.display = "none"
+    listState.showing = true
+    
+
+  }
+  else {
+    delListItem.style.display = list-item
+    listState.showing = true
+  }
+
+deleteList.addEventListener("click",toggleList)
+
+}
+
+
+
+
+
+
+
 
 inputEl3.addEventListener('keydown',addItem3)
