@@ -96,9 +96,6 @@ var targetEl3 = keyEvent3.target
   // console.log([newLi3])
 
     inputEl3.value = ''
-
-
-
   }
 }
 
@@ -106,34 +103,10 @@ var targetEl3 = keyEvent3.target
 
 
 var toggleList = function() {
-  var deleteList = document.querySelector("li button")
-  var delListItem = document.querySelector("li")
-  
-  var listState = {
-  showing: true
-  }
-
-  console.log(listState)
-
-  if (listState.showing) {
-    delListItem.style.display = "none"
-    listState.showing = true
-    
-
-  }
-  else {
-    delListItem.style.display = list-item
-    listState.showing = true
-  }
-
-deleteList.addEventListener("click",toggleList)
-
+  var newLi3 = document.querySelector('li')
+  var deleteLi = itemsListUl3.removeChild(newLi3);
+  deleteList.addEventListener("click",toggleList)
 }
-
-
-
-
-
 
 
 
