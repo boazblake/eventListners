@@ -79,33 +79,46 @@ var inputEl3 = document.querySelector('input.listMaker3')
 console.log([inputEl3])
 var itemsListUl3 = document.querySelector('ul.guest-list-bonus')
 
+var _guestNum = 0
+
 function addItem3(keyEvent3){
   
-var targetEl3 = keyEvent3.target
+  var inputEl = keyEvent3.target
 
   if (keyEvent3.keyCode === 13) {
-    var userInput3 = inputEl3.value
-    // console.log([inputEl3.value])
+    var userInput3 = inputEl.value
+    // console.log([inputEl.value])
 
     var newLi3 = document.createElement('li')
-    newLi3.className += ' guest'
-    newLi3.innerHTML = userInput3 + '<button onclick="toggleList()">X</button>'
+
+    _guestNum++
+    newLi3.className += ' guest g-'+_guestNum
+    // make an actual button node that you can add an event listener to
+
+    // assign an event listener that will remove only the li which is the parent of the clicked button.
+    newLi3.innerHTML = userInput3 + '<button>X</button>'
     // console.log([newLi3])
+
+   
 
     itemsListUl3.appendChild(newLi3)
   // console.log([newLi3])
+    document.querySelector('.g-'+_guestNum + ' button').addEventListener('click', function(){
 
-    inputEl3.value = ''
+      console.log(newLi3)
+      newLi3.outerHTML = ''
+    })
+
+    inputEl.value = ''
   }
 }
 
 
 
 
-var toggleList = function() {
+var deleteListItem = function() {
   var newLi3 = document.querySelector('li')
-  var deleteLi = itemsListUl3.removeChild(newLi3);
-  deleteList.addEventListener("click",toggleList)
+  var deletedLi = itemsListUl3.removeChild(newLi3);
 }
 
 
